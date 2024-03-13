@@ -56,6 +56,7 @@ void loop() {
   }
 
   if (state.doorState == doorStateOpen) {
+    // this implementation largely pulled from "Arduino Projects Book" (starter kit)
     state.knockValue = analogRead(piezoPin);
     if (state.numberOfKnocks < knockThreshold && state.knockValue > 0) {
       if (checkForKnock(state.knockValue)) {
